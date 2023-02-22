@@ -353,7 +353,7 @@ $(function () {
 
       if (url) {
 
-        instance.current.$image.wrap(`<a href="${url}"></a>`);
+        instance.current.$image.wrap(`<a href="${url}" target="_blank"></a>`);
       }
 
       console.log('trigger', instance, instance['$trigger']);
