@@ -280,7 +280,9 @@ function floating() {
 
     const $container = $('.floating-container');
 
-    const paddingLeft = Number($container.css('padding-left').replaceAll(/\D/g, ''));
+    if (!$container.length) return false;
+
+    const paddingLeft = Number($container.css('padding-left').replace(/\D/g, '') || 15);
 
     const offsetLeft = $container.offset().left + paddingLeft;
 
@@ -353,7 +355,7 @@ $(function () {
 
       if (url) {
 
-        instance.current.$image.wrap(`<a href="${url}" target="_blank"></a>`);
+        instance.current.$image.wrap(`<a href="${url}"></a>`);
       }
 
       console.log('trigger', instance, instance['$trigger']);
